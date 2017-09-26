@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import logo from './logo.svg';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <div className="jumbotron">
-         teste
-        </div>
-      </div>
+      <header className="friends-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <ul className="friends-header-item-group nav nav-pills">
+          <li role="presentation" className="active"><a >Home</a></li>
+          <li role="presentation"><a >Profile</a></li>
+          <li role="presentation"><a >Messages</a></li>
+        </ul>
+      
+        
+      </header>
     );
   }
 }
