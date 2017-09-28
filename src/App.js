@@ -7,15 +7,16 @@ class App extends Component {
   render() {
     return (
       <header className="friends-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <ul className="friends-header-item-group nav nav-pills">
-          <li role="presentation" className="active"><a >Home</a></li>
-          <li role="presentation"><a >Profile</a></li>
-          <li role="presentation"><a >Messages</a></li>
-        </ul>
       
-        
-      </header>
+         <form className="search-menu-w40 search-center">
+            <div className="form-group">
+              <input type="text" className="form-control" placeholder="Search" />
+            </div>
+            
+          </form>
+         <img src={logo} className="App-logo" alt="logo" />
+      </header>  
+      
     );
   }
 }

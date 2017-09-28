@@ -26,6 +26,16 @@
   color: #323;
 }
 
+.search-center{
+  text-align: center;
+  margin: 0 auto;
+}
+
+.search-menu-w40{
+  width: 40%;
+}
+
+
 .App-intro {
   font-size: large;
 }
