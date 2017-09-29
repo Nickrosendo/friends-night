@@ -40,6 +40,40 @@
   font-size: large;
 }
 
+.header-profile{
+  display: flex;
+}
+
+.header-profile:hover .btn-profile-header  {
+  border: 1px solid white;
+}
+
+.header-profile:hover{
+  cursor: pointer;
+}
+
+.header-profile img{
+  width: 45px;
+  height: 45px;
+  background: gray;
+  border: 1px solid black;
+  z-index: 1;
+}
+
+.btn-profile-header { 
+  background: transparent;
+  color: white !important;
+  border: none;
+  padding: 10px !important;
+  padding-left: 30px !important;
+  margin-left: -19px;
+  z-index: 0;
+}
+
+.btn-profile-header:hover{
+  
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
