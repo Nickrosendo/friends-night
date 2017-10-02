@@ -1,0 +1,41 @@
+body{
+  background: url('./img/friends-night-login-bg.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.fn-login{
+  margin-top: 200px;
+  
+  color: #fff;
+}
+
+.fn-login-container{
+  width: 400px;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  border-radius: 0.5rem;
+  background: #323 !important;
+  margin: auto;
+}
+
+.fn-login-form{
+  padding: 1rem;
+  width: 80%;
+}
+
+.input-group{
+  margin-top: 0.5rem;
+}
+
+.btn-login{
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.login-options{
+  display: flex;
+  align-items: center;
+}
