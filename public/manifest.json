@@ -3,7 +3,7 @@
   "name": "Create React App Sample",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "friends-night-icon.ico",
       "sizes": "192x192",
       "type": "image/png"
     }
