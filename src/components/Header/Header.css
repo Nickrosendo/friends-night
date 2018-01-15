@@ -1,0 +1,71 @@
+
+.friends-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #323;
+  height: 60px;
+  padding: 1rem;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  z-index: 2;
+}
+
+.btn-profile{
+  background-color: transparent;
+  color: white;
+}
+
+.search-center{
+  text-align: center;
+  margin: 0 auto;
+}
+
+.search-menu-w40{
+  width: 40%;
+}
+
+
+.App-intro {
+  font-size: large;
+}
+
+.header-profile{
+  
+}
+
+.header-profile-img{
+  
+}
+
+.header-profile:hover .btn-profile-header  {
+  border: 1px solid white;
+}
+
+.header-profile:hover{
+  cursor: pointer;
+}
+
+.header-profile img{
+  width: 45px;
+  height: 45px;
+  background: gray;
+  border: 1px solid black;
+  z-index: 1;
+}
+
+.btn-profile-header { 
+  background: transparent;
+  color: white !important;
+  border: none;
+  padding: 10px !important;
+  padding-left: 30px !important;
+  margin-left: -20px;
+  z-index: 0;
+}
+
+.btn-profile-header:hover{
+  
+}
