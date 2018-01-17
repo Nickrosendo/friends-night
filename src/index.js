@@ -1,8 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import './css/Reset.css';
-import 'bootstrap/dist/css/bootstrap.css';
+import './assets/scss/friends-night.scss';
 
 import App from "./App.js";
 import registerServiceWorker from "./registerServiceWorker";

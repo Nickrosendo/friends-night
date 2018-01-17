@@ -45,6 +45,8 @@ class Home extends Component {
             </div>
             <hr/>
             <div className="card text-center p-1">
+              <div className="btn btn-danger">aaa</div>
+              <div className="btn btn-primary">nnn</div>
               <img
                 src={profileLogo}
                 className="img-feed rounded-circle m-auto"
