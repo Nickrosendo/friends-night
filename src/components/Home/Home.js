@@ -32,21 +32,19 @@ class Home extends Component {
                 className="img-responsive img-thumbnail"/>
 
               <div className="text-center mt-1">
-                <a className="btn btn-success glyphicon glyphicon-ok mr-1">
+                <a className="btn btn-success text-white glyphicon glyphicon-ok mr-1">
                   Ir
                 </a>
-                <a className="btn btn-secondary glyphicon glyphicon-info-sign mr-1">
+                <a className="btn btn-primary text-white glyphicon glyphicon-info-sign mr-1">
                   Detalhes
                 </a>
-                <a className="btn btn-warning glyphicon glyphicon-star mr-1">
+                <a className="btn btn-warning text-white glyphicon glyphicon-star mr-1">
                   Interesse
                 </a>
               </div>
             </div>
             <hr/>
             <div className="card text-center p-1">
-              <div className="btn btn-danger">aaa</div>
-              <div className="btn btn-primary">nnn</div>
               <img
                 src={profileLogo}
                 className="img-feed rounded-circle m-auto"
@@ -65,13 +63,13 @@ class Home extends Component {
                 className="img-responsive img-thumbnail"/>
 
               <div className="text-center mt-1">
-                <a className="btn btn-success glyphicon glyphicon-ok mr-1">
+                <a className="btn btn-success text-white glyphicon glyphicon-ok mr-1">
                   Ir
                 </a>
-                <a className="btn btn-secondary glyphicon glyphicon-info-sign mr-1">
+                <a className="btn btn-primary text-white glyphicon glyphicon-info-sign mr-1">
                   Detalhes
                 </a>
-                <a className="btn btn-warning glyphicon glyphicon-star mr-1">
+                <a className="btn btn-warning text-white glyphicon glyphicon-star mr-1">
                   Interesse
                 </a>
               </div>

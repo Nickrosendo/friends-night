@@ -35,16 +35,16 @@ $grays: map-merge((
   "900": $gray-900
 ), $grays);
 
-$blue:    lighten(#007bff, 20%) !default;
-$indigo:  lighten(#6610f2, 20%) !default;
-$purple:  lighten(#6f42c1, 20%) !default;
-$pink:    lighten(#e83e8c, 20%) !default;
-$red:     lighten(#dc3545, 20%) !default; 
-$orange:  lighten(#fd7e14, 20%) !default;
-$yellow:  lighten(#ffc107, 20%) !default;
-$green:   lighten(#28a745, 20%) !default;
-$teal:    lighten(#20c997, 20%) !default;
-$cyan:    lighten(#17a2b8, 20%) !default;
+$blue:    darken(#007bff, 10%) !default;
+$indigo:  darken(#6610f2, 10%) !default;
+$purple:  darken(#6f42c1, 10%) !default;
+$pink:    darken(#e83e8c, 10%) !default;
+$red:     darken(#dc3545, 10%) !default; 
+$orange:  darken(#fd7e14, 10%) !default;
+$yellow:  darken(#ffc107, 10%) !default;
+$green:   darken(#28a745, 10%) !default;
+$teal:    darken(#20c997, 10%) !default;
+$cyan:    darken(#17a2b8, 10%) !default;
 
 $colors: () !default;
 $colors: map-merge((
@@ -62,15 +62,15 @@ $colors: map-merge((
   "gray":       $gray-600,
   "gray-dark":  $gray-800
 ), $colors);
- 
+   
 $primary:       #323;
 $secondary:     #eee;
-$success:       lighten($green, 10%);
-$info:          lighten($cyan, 10%);
-$warning:       lighten($yellow, 10%);
-$danger:        lighten($red, 10%);
-$light:         lighten($gray-100, 10%);
-$dark:          lighten($gray-800, 10%);
+$success:       lighten($green, 20%);
+$info:          lighten($cyan, 20%);
+$warning:       lighten($orange, 20%);
+$danger:        lighten($red, 20%);
+$light:         lighten($gray-100, 20%);
+$dark:          lighten($gray-800, 20%);
 
 $theme-colors: () !default;
 $theme-colors: map-merge((
@@ -138,7 +138,7 @@ $sizes: (
 // Settings for the `<body>` element.
  
 $body-bg:                   #eee;
-$body-color:                $gray-600;
+$body-color:                $gray-900;
 
 // Links
 //
@@ -221,11 +221,13 @@ $transition-collapse:         height .35s ease !default;
 // Fonts
 //
 // Font, line-height, and color for body text, headings, and more.
+@import url('https://fonts.googleapis.com/css?family=Lato');
 
 // stylelint-disable value-keyword-case
 $font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
-$font-family-base:            $font-family-sans-serif !default;
+$font-family-lato:            Lato, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; 
+$font-family-base:            $font-family-lato;
 // stylelint-enable value-keyword-case
 
 $font-size-base:              1rem !default; // Assumes the browser default, typically `16px`
@@ -443,7 +445,7 @@ $custom-control-spacer-x:               1rem !default;
 $custom-control-indicator-size:         1rem !default;
 $custom-control-indicator-bg:           $gray-300 !default;
 $custom-control-indicator-bg-size:      50% 50% !default;
-$custom-control-indicator-box-shadow:   inset 0 .25rem .25rem rgba($black, .1) !default;
+$custom-control-indicator-box-shadow:   inset 0 .25rem .25rem rgba($black, .1) !default; 
 
 $custom-control-indicator-disabled-bg:          $gray-200 !default;
 $custom-control-label-disabled-color:     $gray-600 !default;
