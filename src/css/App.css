@@ -1,4 +1,8 @@
 
+.clear-header-position {
+  margin-top: 100px;
+}
+
 .App {
   text-align: center;
 }
@@ -8,21 +12,15 @@
   height: 60px;
 }
 
-.fn-content-feed-padding{
-  padding-right: 230px !important;
-  padding-left: 230px !important;
-}
-
 .fn-content-feed{
   border: 1px solid lightgrey;
   background: #323 !important;
-  margin-top: 100px;
 }
 
 
 .fn-ads-container{
   position: fixed;
-  width: 300px;
+  width: 325px;
   border-top-right-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
   background: #323 !important;
@@ -35,24 +33,34 @@
   color: #fff;
 }
 
-.fn-my-next-events-container{ 
-  position: fixed;
-  width: 250px;
+.fn-my-interests-container{ 
+  width: 100%;
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
   background: #323 !important;
   right: 0;
-  top: 100px;
 }
 
-.fn-my-next-events{
+.fn-my-interests{
   padding: 1rem;
-  color: #fff;
 }
 
-.fn-my-next-events li{
-  color: Gray;
+.fn-my-best-friends-container{
+  width: 100%;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  background: #323 !important;  
 }
+
+.fn-my-best-friends {
+  padding: 1rem;
+}
+
+.img-thumb {
+  width: 40px;
+  height: 40px;
+}
+
 
 .img-feed{
   width: 100px;

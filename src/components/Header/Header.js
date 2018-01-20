@@ -1,7 +1,7 @@
 import React from 'react';
 import {ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem} from 'reactstrap';
 
-import "./Header.css";
+import "./Header.scss";
 import logo from '../../logo.svg';
 import profileLogo from '../../img/Rosendo.jpg';
 
@@ -35,16 +35,12 @@ class Header extends React.Component {
         </form>
         <div className="header-profile">
           <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-            <DropdownToggle caret className="btn-profile px-1 py-0">
+            <DropdownToggle caret outline className="px-1 py-0">
               <img
                 src={profileLogo}
-                className="header-profile-img rounded-circle img-fluid"
+                className="rounded-circle img-fluid"
                 alt="profileIMG"/>
-              <span
-                className="ml-1"
-                style={{
-                border: "1px solid #fff;"
-              }}>Nicolas Rosendo</span>
+              <span className="ml-1">Nicolas Rosendo</span>
             </DropdownToggle>
             <DropdownMenu>
               <DropdownItem>Perfil</DropdownItem>

@@ -1,0 +1,67 @@
+.friends-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #323;
+  height: 60px;
+  padding: 1rem;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  z-index: 2;
+}
+$btn-profile-events-color: #fff;
+$btn-profile-events-bg: lighten(#323, 20%);
+$btn-profile-events-border: 1px solid #fff;
+
+.btn-profile {
+  background-color: transparent;
+  color: #fff;
+  &:hover {
+    color: $btn-profile-events-color !important;
+    background-color: $btn-profile-events-bg !important;
+    border: $btn-profile-events-border;
+  }
+  &:active {
+    color: $btn-profile-events-color !important;
+    background-color: $btn-profile-events-bg !important;
+    border: $btn-profile-events-border;
+  }
+  &:visited {
+    color: $btn-profile-events-color !important;
+    background-color: $btn-profile-events-bg !important;
+    border: $btn-profile-events-border;
+  }
+  &:link {
+    color: $btn-profile-events-color !important;
+    background-color: $btn-profile-events-bg !important;
+    border: $btn-profile-events-border;
+  }
+  &:focus {
+    color: $btn-profile-events-color !important;
+    background-color: $btn-profile-events-bg !important;
+    border: $btn-profile-events-border;
+  }
+
+}
+
+.search-center {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.search-menu-w40 {
+  width: 40%;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.header-profile {
+  img {
+    width: 45px;
+    height: 45px;
+  }
+}
