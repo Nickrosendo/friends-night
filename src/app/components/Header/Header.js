@@ -2,8 +2,8 @@ import React from 'react';
 import {ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem} from 'reactstrap';
 
 import "./Header.scss";
-import logo from '../../logo.svg';
-import profileLogo from '../../img/Rosendo.jpg';
+import logo from '../../../logo.svg';
+import profileLogo from '../../../img/Rosendo.jpg';
 
 class Header extends React.Component {
 

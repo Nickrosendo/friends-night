@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {browserHistory} from 'react-router';
 
 import logo from '../../logo.svg';
-import "./Login.css";
+import "./Login.scss";
 
 class Login extends Component {
 
