@@ -10,6 +10,14 @@ import "./Home.scss";
 
 class Home extends Component {
 
+  componentDidMount() {
+    // http.get('/v1/events', { headers: { "x-access-token" : localStorage.getItem("auth-token")}})
+    //   .then( response => {
+    //     console.log('res: ', response);
+    //   })
+    //   .catch( error => console.log('error: ', error))
+  }
+
   render() {
     return (
       <div>

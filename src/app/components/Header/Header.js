@@ -1,5 +1,6 @@
 import React from 'react';
 import {ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem} from 'reactstrap';
+import {browserHistory} from 'react-router';
 
 import "./Header.scss";
 import logo from '../../../logo.svg';
@@ -24,13 +25,18 @@ class Header extends React.Component {
     });
   }
 
+  handleLogout() {
+    localStorage.removeItem('auth-token');
+    browserHistory.push('/login');
+  }
+
   render() {
     return (
       <header className="friends-header">
         <img src={logo} className="App-logo" alt="logo"/>
         <form className="search-menu-w40 search-center">
 
-          <input type="text" className="form-control" placeholder="Search"/>
+          <input type="text" className="form-control" placeholder="Buscar eventos ou amigos"/>
 
         </form>
         <div className="header-profile">
@@ -45,8 +51,10 @@ class Header extends React.Component {
             <DropdownMenu>
               <DropdownItem>Perfil</DropdownItem>
               <DropdownItem>Favoritos</DropdownItem>
+              <DropdownItem>Segurança</DropdownItem>
+              <DropdownItem>Privacidade</DropdownItem>
               <DropdownItem divider/>
-              <DropdownItem>Sair</DropdownItem>
+              <DropdownItem onClick={this.handleLogout}>Sair</DropdownItem>
             </DropdownMenu>
           </ButtonDropdown>
         </div>

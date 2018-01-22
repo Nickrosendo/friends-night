@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {browserHistory} from 'react-router';
+
+import http from "../services/http.js";
 
 import logo from '../../logo.svg';
 import "./Login.scss";
@@ -16,38 +18,35 @@ class Login extends Component {
   componentDidMount() {}
 
   verificaUsuario(event) {
-    event.preventDefault();
-    this.setState({ msg: 'Não foi possível efetuar o login!' })
-    const RequestInfo = {
-      method: 'POST',
-      body: JSON.stringify({ email: this.email.value, senha: this.senha.value }),
-      headers: new Headers({
-        'Content-Type': 'application/json'
-      })
-    }
-    fetch('http://localhost:8080/usuarios/usuario', RequestInfo)
+    event.preventDefault();    
+    http.post('/login', {usuario: this.email.value, senha: this.senha.value})
       .then(response => {
-        if (response.ok)
-          return response.text();
-        else
-          throw new Error()
-      })
+        if (response.status === 200) 
+          return response.data;
+        else 
+          throw new Error('Não foi possível efetuar o login!');
+        }
+      )
       .then(token => {
-        browserHistory.push('/');
+        this.setState({msg: ''});
+        if (token) {
+          localStorage.setItem('auth-token', token);
+          browserHistory.push('/');
+        }
       })
-      .catch(error => {
-        this.setState({ msg: 'Não foi possível efetuar o login!' });
+      .catch((error) => {
+        this.setState({msg: error.message});
       });
 
   }
 
   ErrorMessages() {
     if (this.state.msg) {
-      return (<span className="label label-danger text-center error-msg"> {this.state.msg} </span>);
+      return (
+        <div className="alert alert-danger" role="alert">{this.state.msg}</div>
+      );
     }
   }
-
-
 
   render() {
     return (
@@ -56,24 +55,43 @@ class Login extends Component {
           <div className="fn-login-container jumbotron">
 
             <div className="fn-login-title-container">
-              <img src={logo} className="App-logo text-center" alt="logo" />
-              <p className="text-center"> Login Friends Night</p>
+              <img src={logo} className="App-logo text-center" alt="logo"/>
+              <p className="text-center">
+                Login Friends Night</p>
             </div>
             {this.ErrorMessages()}
-            <form className="fn-login-form" onSubmit={this.verificaUsuario.bind(this)}>
+            <form
+              className="fn-login-form"
+              onSubmit={this
+              .verificaUsuario
+              .bind(this)}>
               <div className="input-group">
-                <span className="input-group-addon" id="basic-addon1">Email</span>
-                <input type="text" className="form-control" placeholder="Email" ref={value => this.email = value} />
+                <div className="input-group-prepend">
+                  <span className="input-group-text">
+                    Email</span>
+                </div>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Email"
+                  aria-label="Email"
+                  ref={value => this.email = value}/>
               </div>
               <div className="input-group">
-                <span className="input-group-addon" id="basic-addon1">Senha</span>
-                <input type="password" className="form-control" placeholder="Senha" ref={value => this.senha = value} />
+                <div className="input-group-prepend">
+                  <span className="input-group-text">
+                    Senha</span>
+                </div>
+                <input
+                  type="password"
+                  className="form-control"
+                  placeholder="Senha"
+                  aria-label="Senha"
+                  ref={value => this.senha = value}/>
               </div>
 
-              <div className="login-options">
-                <input type="submit" className="btn btn-default btn-login glyphicon glyphicon-log-in" value="Entrar" />
-
-                <div className="fb-login-button btn-login" data-width="130" data-max-rows="1" data-size="medium" data-button-type="continue_with" data-auto-logout-link="false"></div>
+              <div className="login-options mt-2">
+                <input type="submit" className="btn btn-default btn-block" value="Entrar"/>
               </div>
             </form>
 
@@ -81,7 +99,6 @@ class Login extends Component {
         </div>
       </page>
     );
-
 
   }
 }
