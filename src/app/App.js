@@ -6,7 +6,7 @@ import Home from "./Home/Home.js";
 
 const verificaToken = (nextState, replace) => {
   if(localStorage.getItem('auth-token') === null) {
-    replace("/login?msg=Acesso Negado.");
+    replace("/login?msg=Acesso Negado");
   }
 }
 

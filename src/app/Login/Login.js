@@ -8,10 +8,10 @@ import "./Login.scss";
 
 class Login extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      msg: ''
+      msg: this.props.location.query.msg
     }
   }
 
