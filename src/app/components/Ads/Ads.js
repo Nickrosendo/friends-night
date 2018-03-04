@@ -1,6 +1,7 @@
 import React from 'react';
 
 import "./Ads.scss";
+import dgtl from "../../../img/DGTL.jpg";
 
 class Ads extends React.Component {
   constructor() {
@@ -15,11 +16,11 @@ class Ads extends React.Component {
           <p>
             Eventos Populares</p>
           <img
-            src="https://scontent.fcgh2-1.fna.fbcdn.net/v/t1.0-9/21232030_1637333892946363_7644585608871775899_n.jpg?oh=aaf3e5733b7ddf4f8df8e14a004ee3f3&oe=5A824AC7"
+            src={dgtl}
             alt="Advertising"
             className="img-responsive img-thumbnail"/>
           <h3 className="text-left">
-            D-Side - 0+1</h3>
+            DGTL-sp 2018</h3>
         </section>
       </div>
     );

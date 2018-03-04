@@ -3,6 +3,7 @@ import React from 'react';
 import "./Feed.scss";
 
 import profileLogo from '../../../img/Rosendo.jpg';
+import theHoleFestival from '../../../img/theholefestival.jpg';
 
 class Feed extends React.Component {
   constructor() {
@@ -24,10 +25,11 @@ class Feed extends React.Component {
             Vai para o</p>
           <h3 className="text-center">
             <span className="label label-success">
-              Baile do Mack VI - O Majestoso</span>
+              The Hole Festival  
+            </span>
           </h3>
           <img
-            src="https://scontent.fcgh2-1.fna.fbcdn.net/v/t1.0-9/21077597_1615129791892454_5073114169587912977_n.jpg?oh=35e81e3092b7bc1c7ed42856b0661ef5&oe=5A885679"
+            src={theHoleFestival}
             alt="Event Img"
             className="img-responsive img-thumbnail"/>
 
