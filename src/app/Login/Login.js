@@ -89,10 +89,13 @@ class Login extends Component {
                   aria-label="Senha"
                   ref={value => this.senha = value}/>
               </div>
-
               <div className="login-options mt-2">
                 <input type="submit" className="btn btn-default btn-block" value="Entrar"/>
               </div>
+
+              <section className="fn-fb-login-container">
+                <div className="fb-login-button"  data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="true" data-auto-logout-link="false" data-use-continue-as="true"></div>
+              </section>
             </form>
 
           </div>
