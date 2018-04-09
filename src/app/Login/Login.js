@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import {browserHistory} from 'react-router';
 
-import http from "../services/http.js";
-
+import Auth from "../services/auth";
 import logo from '../../logo.svg';
 import "./Login.scss";
 
@@ -15,29 +13,25 @@ class Login extends Component {
     }
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    Auth.getLoginStatus();
+    (function (d, s, id) {
+      var js,
+        fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {
+        return;
+      }
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://connect.facebook.net/pt_BR/sdk.js";
+      fjs
+        .parentNode
+        .insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  }
 
-  verificaUsuario(event) {
-    event.preventDefault();    
-    http.post('/login', {usuario: this.email.value, senha: this.senha.value})
-      .then(response => {
-        if (response.status === 200) 
-          return response.data;
-        else 
-          throw new Error('Não foi possível efetuar o login!');
-        }
-      )
-      .then(token => {
-        this.setState({msg: ''});
-        if (token) {
-          localStorage.setItem('auth-token', token);
-          browserHistory.push('/');
-        }
-      })
-      .catch((error) => {
-        this.setState({msg: error.message});
-      });
-
+  verificaUsuario() {
+    Auth.getLoginStatus();
   }
 
   ErrorMessages() {
@@ -60,43 +54,19 @@ class Login extends Component {
                 Login Friends Night</p>
             </div>
             {this.ErrorMessages()}
-            <form
-              className="fn-login-form"
-              onSubmit={this
-              .verificaUsuario
-              .bind(this)}>
-              <div className="input-group">
-                <div className="input-group-prepend">
-                  <span className="input-group-text">
-                    Email</span>
-                </div>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Email"
-                  aria-label="Email"
-                  ref={value => this.email = value}/>
-              </div>
-              <div className="input-group">
-                <div className="input-group-prepend">
-                  <span className="input-group-text">
-                    Senha</span>
-                </div>
-                <input
-                  type="password"
-                  className="form-control"
-                  placeholder="Senha"
-                  aria-label="Senha"
-                  ref={value => this.senha = value}/>
-              </div>
-              <div className="login-options mt-2">
-                <input type="submit" className="btn btn-default btn-block" value="Entrar"/>
-              </div>
 
-              <section className="fn-fb-login-container">
-                <div className="fb-login-button"  data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="true" data-auto-logout-link="false" data-use-continue-as="true"></div>
-              </section>
-            </form>
+            <section className="fn-fb-login-container">
+              <div
+                className="fb-login-button"
+                data-max-rows="1"
+                data-size="large"
+                data-scope="public_profile, email"
+                data-button-type="login_with"
+                data-show-faces="true"
+                data-auto-logout-link="true"
+                data-use-continue-as="true"
+                data-onlogin={this.verificaUsuario()}></div>
+            </section>
 
           </div>
         </div>

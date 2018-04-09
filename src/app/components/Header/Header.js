@@ -1,7 +1,7 @@
 import React from 'react';
 import {ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem} from 'reactstrap';
-import {browserHistory} from 'react-router';
 
+import Auth from "../../services/auth";
 import "./Header.scss";
 import logo from '../../../logo.svg';
 import profileLogo from '../../../img/Rosendo.jpg';
@@ -10,7 +10,6 @@ class Header extends React.Component {
 
   constructor(props) {
     super(props);
-
     this.toggle = this
       .toggle
       .bind(this);
@@ -26,8 +25,7 @@ class Header extends React.Component {
   }
 
   handleLogout() {
-    localStorage.removeItem('auth-token');
-    browserHistory.push('/login');
+    Auth.logout();
   }
 
   render() {
@@ -36,16 +34,16 @@ class Header extends React.Component {
         <img src={logo} className="App-logo" alt="logo"/>
         <form className="search-menu-w40 search-center">
 
-          <input type="text" className="form-control" placeholder="Buscar eventos ou amigos"/>
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Buscar eventos ou amigos"/>
 
         </form>
         <div className="header-profile">
           <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
             <DropdownToggle caret outline className="px-1 py-0">
-              <img
-                src={profileLogo}
-                className="rounded-circle img-fluid"
-                alt="profileIMG"/>
+              <img src={profileLogo} className="rounded-circle img-fluid" alt="profileIMG"/>
               <span className="ml-1">Nicolas Rosendo</span>
             </DropdownToggle>
             <DropdownMenu>
