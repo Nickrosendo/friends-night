@@ -2,48 +2,42 @@
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #323;
+  background-color: #fff;
+  border: 1px solid #ddd;
   height: 60px;
   padding: 1rem;
-  color: white;
+  color: #ddd;
   display: flex;
   flex-direction: row;
   align-items: center;
   z-index: 2;
 }
-$btn-profile-events-color: #fff;
-$btn-profile-events-bg: lighten(#323, 20%);
-$btn-profile-events-border: 1px solid #fff;
+$btn-profile-events-color: #aaa;
+$btn-profile-events-bg: #fff;
+$btn-profile-events-border: 1px solid #ddd;
 
 .btn-profile {
-  background-color: transparent;
-  color: #fff;
-  &:hover {
-    color: $btn-profile-events-color !important;
-    background-color: $btn-profile-events-bg !important;
-    border: $btn-profile-events-border;
+  background-color: $btn-profile-events-bg;
+  border: 1px solid #ddd;  
+  button {
+    color: darken($btn-profile-events-color, 30%) !important;
+    &:hover {
+      color: darken($btn-profile-events-color, 50%) !important;
+      background-color: darken($btn-profile-events-bg, 10%) !important;
+    }
+    &:active {
+      color: darken($btn-profile-events-color, 80%) !important;
+      background-color: darken($btn-profile-events-bg, 10%) !important;
+    }
+    &:visited {
+      color: darken($btn-profile-events-color, 80%) !important;
+      background-color: darken($btn-profile-events-bg, 10%) !important;
+    }
+    &:focus {
+      color: darken($btn-profile-events-color, 80%) !important;
+      background-color: darken($btn-profile-events-bg, 10%) !important;
+    }
   }
-  &:active {
-    color: $btn-profile-events-color !important;
-    background-color: $btn-profile-events-bg !important;
-    border: $btn-profile-events-border;
-  }
-  &:visited {
-    color: $btn-profile-events-color !important;
-    background-color: $btn-profile-events-bg !important;
-    border: $btn-profile-events-border;
-  }
-  &:link {
-    color: $btn-profile-events-color !important;
-    background-color: $btn-profile-events-bg !important;
-    border: $btn-profile-events-border;
-  }
-  &:focus {
-    color: $btn-profile-events-color !important;
-    background-color: $btn-profile-events-bg !important;
-    border: $btn-profile-events-border;
-  }
-
 }
 
 .search-center {
@@ -63,5 +57,26 @@ $btn-profile-events-border: 1px solid #fff;
   img {
     width: 45px;
     height: 45px;
+  }
+}
+
+.btn-header > button {
+  border: none !important;
+  color: darken($btn-profile-events-color, 30%) !important;
+  &:hover {
+    color: darken($btn-profile-events-color, 50%) !important;
+    background-color: transparent !important;
+  }
+  &:active {
+    color: darken($btn-profile-events-color, 80%) !important;
+    background-color: transparent !important;
+  }
+  &:visited {
+    color: darken($btn-profile-events-color, 80%) !important;
+    background-color: transparent !important;
+  }
+  &:focus {
+    color: darken($btn-profile-events-color, 80%) !important;
+    background-color: transparent !important;
   }
 }

@@ -14,7 +14,7 @@ class Interests extends React.Component {
     return (
       <div className="fn-my-interests-container mb-4">
         <section className="fn-my-interests">
-          <p className="text-white">
+          <p>
             Meus Interesses</p>
           <ul className="list-group">
             <li className="list-group-item">
@@ -22,7 +22,7 @@ class Interests extends React.Component {
             </li>
           </ul>
 
-          <Button className="mt-2" outline color="secondary">Adicionar Interesse</Button>
+          <Button className="mt-2" outline >Adicionar Interesse</Button>
 
         </section>
       </div>

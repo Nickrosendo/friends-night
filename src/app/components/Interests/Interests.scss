@@ -2,10 +2,17 @@
   width: 100%;
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
-  background: #323 !important;
+  background: #fff !important;
   right: 0;
+  color: darken(#aaa, 50%) !important;
+  border: 1px solid #ddd;
+  border-right: none;
 }
 
 .fn-my-interests{
   padding: 1rem;
+  color: darken(#aaa, 50%) !important;
+  button {
+    color: darken(#aaa, 50%) !important;
+  }
 }

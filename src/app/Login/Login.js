@@ -1,8 +1,13 @@
 import React, {Component} from 'react';
+import FacebookLogin from 'react-facebook-login';
 
 import Auth from "../services/auth";
-import logo from '../../logo.svg';
+import logo from '../../fn-logo.svg';
 import "./Login.scss";
+
+const responseFacebook = (res) => {
+  Auth.getLoginStatus();
+}
 
 class Login extends Component {
 
@@ -14,24 +19,13 @@ class Login extends Component {
   }
 
   componentDidMount() {
-    Auth.getLoginStatus();
-    (function (d, s, id) {
-      var js,
-        fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) {
-        return;
-      }
-      js = d.createElement(s);
-      js.id = id;
-      js.src = "https://connect.facebook.net/pt_BR/sdk.js";
-      fjs
-        .parentNode
-        .insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
+    // Auth.getLoginStatus();
+
   }
 
+
   verificaUsuario() {
-    Auth.getLoginStatus();
+    console.log('foi verifica')
   }
 
   ErrorMessages() {
@@ -45,30 +39,34 @@ class Login extends Component {
   render() {
     return (
       <page className="login-page-bg">
-        <div className="fn-login">
-          <div className="fn-login-container jumbotron">
+        <div className="fn-login-container jumbotron">
 
-            <div className="fn-login-title-container">
-              <img src={logo} className="App-logo text-center" alt="logo"/>
-              <p className="text-center">
-                Login Friends Night</p>
-            </div>
-            {this.ErrorMessages()}
-
-            <section className="fn-fb-login-container">
-              <div
-                className="fb-login-button"
-                data-max-rows="1"
-                data-size="large"
-                data-scope="public_profile, email"
-                data-button-type="login_with"
-                data-show-faces="true"
-                data-auto-logout-link="true"
-                data-use-continue-as="true"
-                data-onlogin={this.verificaUsuario()}></div>
-            </section>
-
+          <div className="fn-login-title-container">
+            <img src={logo} className="App-logo text-center" alt="logo"/>
+            <p>Friends Night</p>
           </div>
+          {this.ErrorMessages()}
+
+          <section className="fn-fb-login-container text-center">
+            <FacebookLogin
+              appId="1945964319010132"
+              cssClass="fn-facebook-btn"
+              icon="fa-facebook"
+              autoLoad={true}
+              fields="name,email,picture"
+              callback={responseFacebook} 
+            ></FacebookLogin>
+            {/* <div
+              className="fb-login-button"
+              data-max-rows="1"
+              data-size="large"
+              data-scope="public_profile, email"
+              data-button-type="continue_with"
+              data-show-faces="true"
+              data-use-continue-as="true"
+              data-onlogin={window.FB.login( res => console.log("res: ", res) ) }></div> */}
+          </section>
+
         </div>
       </page>
     );

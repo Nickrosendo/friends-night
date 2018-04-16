@@ -1,30 +1,43 @@
 .login-page-bg {
-   background: url('../../img/friends-night-login-bg.jpg') no-repeat center center fixed; 
+  background: url('../../img/friends-night-login-bg.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-    
-    /*To support older browsers*/
-    height: 100%;
-    width: 100%;
-
-    position: absolute;
-
-    /* match the viewport size. */
-    height: 100vh;
-    width: 100vw;
-
-    background-repeat: no-repeat;
-    background-size: 100%; 
+  /*To support older browsers*/
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  /* match the viewport size. */
+  height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
-.fn-login{
-  margin-top: 10px;
-  color: #fff !important;
-
-  a {
-    color: #fff !important;
+.fn-facebook-btn {
+  background: #4267b2;
+  color: #fff;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 16px;
+  border: none;
+  font-family: Helvetica, Arial, sans-serif;
+  letter-spacing: .25px;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: clip;
+  white-space: nowrap;
+  &:hover {
+    cursor: pointer;
+  }
+  i {
+    margin-right: 15px;
+    background: white;
+    padding: 5px;
+    color: #4267b2;
+    padding-bottom: 0;
+    border-radius: 3px;
   }
 }
 
@@ -33,42 +46,46 @@
   background: #fff;
   border-radius: 8px;
   padding: 6px;
+  color: #aaa !important;
 }
 
-.fn-login-title-container{
+.fn-login-title-container {
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.fn-login-container{
-  width: 400px;
+.fn-login-container {
+  width: 30%;
+  margin-top: 15%;
   padding-right: 1rem;
   padding-left: 1rem;
   border-radius: 0.5rem;
-  background: #323 !important;
+  background: #fff !important;
   margin: auto;
 }
 
-.fn-login-form{
+.fn-login-form {
   margin: 0 auto;
   padding: 1rem;
 }
 
-.input-group{
+.input-group {
   margin-top: 0.5rem;
 }
 
-.btn-login{
+.btn-login {
   margin-top: 0.5rem;
   margin-right: 0.5rem;
 }
 
-.login-options{
+.login-options {
   display: flex;
   align-items: center;
 }
 
-.error-msg{
+.error-msg {
   display: block !important;
   margin: 1rem;
   padding: 8px 0 !important;

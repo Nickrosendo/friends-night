@@ -15,7 +15,7 @@ class BestFriends extends React.Component {
     return (
       <div className="fn-my-best-friends-container">
         <section className="fn-my-best-friends">
-          <p className="text-white">
+          <p>
             Meus melhores amigos
           </p>
           <ul className="list-group">

@@ -2,9 +2,15 @@
   width: 100%;
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
-  background: #323 !important;
+  background: #fff !important;
+  border: 1px solid #ddd;
+  border-right: none;
 }
 
 .fn-my-best-friends {
   padding: 1rem;
+  color: darken(#aaa, 50%) !important;
+  button {
+    color: darken(#aaa, 50%) !important;
+  }
 }

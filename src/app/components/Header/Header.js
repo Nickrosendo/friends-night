@@ -1,9 +1,10 @@
 import React from 'react';
 import {ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem} from 'reactstrap';
+// import {browserHistory} from 'react-router';
 
 import Auth from "../../services/auth";
 import "./Header.scss";
-import logo from '../../../logo.svg';
+import logo from '../../../fn-logo.svg';
 import profileLogo from '../../../img/Rosendo.jpg';
 
 class Header extends React.Component {
@@ -41,12 +42,12 @@ class Header extends React.Component {
 
         </form>
         <div className="header-profile">
-          <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+          <ButtonDropdown className="btn-header" isOpen={this.state.dropdownOpen} toggle={this.toggle}>
             <DropdownToggle caret outline className="px-1 py-0">
               <img src={profileLogo} className="rounded-circle img-fluid" alt="profileIMG"/>
               <span className="ml-1">Nicolas Rosendo</span>
             </DropdownToggle>
-            <DropdownMenu>
+            <DropdownMenu className="btn-profile">
               <DropdownItem>Perfil</DropdownItem>
               <DropdownItem>Favoritos</DropdownItem>
               <DropdownItem>Segurança</DropdownItem>
