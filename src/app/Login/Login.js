@@ -53,7 +53,7 @@ class Login extends Component {
               cssClass="fn-facebook-btn"
               icon="fa-facebook"
               autoLoad={true}
-              fields="name,email,picture"
+              fields="name,email,picture,user_friends"
               callback={responseFacebook} 
             ></FacebookLogin>
             {/* <div
