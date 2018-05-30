@@ -8,7 +8,6 @@ import {
 } from 'reactstrap'
 import { browserHistory } from 'react-router'
 
-import Auth from '../../services/auth'
 import './Header.scss'
 import logo from '../../../fn-logo.svg'
 import profileLogo from '../../../img/Rosendo.jpg'
@@ -37,7 +36,8 @@ class Header extends React.Component {
   }
 
   handleLogout() {
-    Auth.logout()
+    localStorage.removeItem('auth-token')
+    browserHistory.push('/login')
   }
 
   render() {

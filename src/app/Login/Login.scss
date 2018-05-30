@@ -66,23 +66,23 @@
   margin: auto;
 }
 
-.fn-login-form {
-  margin: 0 auto;
-  padding: 1rem;
-}
+.fn-login-form-container{
+  input {
+    margin-bottom: 5px;
+  }
 
-.input-group {
-  margin-top: 0.5rem;
-}
+  p {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 14px;
+    color: #495057;
+  }
 
-.btn-login {
-  margin-top: 0.5rem;
-  margin-right: 0.5rem;
-}
-
-.login-options {
-  display: flex;
-  align-items: center;
+  .btn-login {
+    margin: 0 auto;
+    border-radius: 8px;
+    width: 40%;
+  }
 }
 
 .error-msg {

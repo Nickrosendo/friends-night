@@ -3,7 +3,7 @@ import { browserHistory } from 'react-router'
 export default {
   getLoginStatus: function() {
     window.FB.getLoginStatus(function(response) {
-      console.log('status: ', response)
+      
       if (response.status === 'connected') {
         // the user is logged in and has authenticated your app, and
         // response.authResponse supplies the user's ID, a valid access token, a signed

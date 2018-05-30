@@ -1,38 +1,55 @@
-import React, {Component} from 'react';
-import FacebookLogin from 'react-facebook-login';
+import React, { Component } from 'react'
+import { Button, FormGroup, FormControl } from 'react-bootstrap'
+import { browserHistory } from 'react-router'
 
-import Auth from "../services/auth";
-import logo from '../../fn-logo.svg';
-import "./Login.scss";
+import http from '../services/http.js'
 
-const responseFacebook = (res) => {
-  Auth.getLoginStatus();
-}
+import logo from '../../fn-logo.svg'
+import './Login.scss'
 
 class Login extends Component {
-
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-      msg: this.props.location.query.msg
+      msg: this.props.location.query.msg,
+      email: '',
+      senha: ''
     }
   }
 
-  componentDidMount() {
-    // Auth.getLoginStatus();
-
+  handleLogin = event => {
+    event.preventDefault()
+    http
+      .post('/login', { usuario: this.state.email, senha: this.state.senha })
+      .then(response => {
+        if (response.status === 200) return response.data
+        else throw new Error('Não foi possível efetuar o login!')
+      })
+      .then(token => {
+        this.setState({ msg: '' })
+        if (token) {
+          localStorage.setItem('auth-token', token)
+          browserHistory.push('/home')
+        }
+      })
+      .catch(error => {
+        this.setState({ msg: error.message })
+      })
   }
 
-
-  verificaUsuario() {
-    console.log('foi verifica')
+  handleChange = event => {
+    this.setState({
+      [event.target.id]: event.target.value
+    })
   }
 
-  ErrorMessages() {
+  ErrorMessages = () => {
     if (this.state.msg) {
       return (
-        <div className="alert alert-danger" role="alert">{this.state.msg}</div>
-      );
+        <div className="alert alert-danger" role="alert">
+          {this.state.msg}
+        </div>
+      )
     }
   }
 
@@ -40,38 +57,44 @@ class Login extends Component {
     return (
       <page className="login-page-bg">
         <div className="fn-login-container jumbotron">
-
           <div className="fn-login-title-container">
-            <img src={logo} className="App-logo text-center" alt="logo"/>
+            <img src={logo} className="App-logo text-center" alt="logo" />
             <p>Friends Night</p>
           </div>
           {this.ErrorMessages()}
 
-          <section className="fn-fb-login-container text-center">
-            <FacebookLogin
-              appId="1945964319010132"
-              cssClass="fn-facebook-btn"
-              icon="fa-facebook"
-              autoLoad={true}
-              fields="name,email,picture,user_friends"
-              callback={responseFacebook} 
-            ></FacebookLogin>
-            {/* <div
-              className="fb-login-button"
-              data-max-rows="1"
-              data-size="large"
-              data-scope="public_profile, email"
-              data-button-type="continue_with"
-              data-show-faces="true"
-              data-use-continue-as="true"
-              data-onlogin={window.FB.login( res => console.log("res: ", res) ) }></div> */}
-          </section>
-
+          <form
+            className="fn-login-form-container text-center"
+            onSubmit={this.handleLogin}
+          >
+            <FormGroup controlId="email" bsSize="large">
+              <FormControl
+                autoFocus
+                placeholder="Email"
+                type="email"
+                required
+                value={this.state.email}
+                onChange={this.handleChange}
+              />
+            </FormGroup>
+            <FormGroup controlId="senha" bsSize="large">
+              <FormControl
+                placeholder="Senha"
+                type="password"
+                required
+                value={this.state.senha}
+                onChange={this.handleChange}
+              />
+            </FormGroup>
+            <Button block bsSize="large" type="submit" className="btn-login">
+              Entrar
+            </Button>
+            <p>Usuário e senha padrao: teste</p>
+          </form>
         </div>
       </page>
-    );
-
+    )
   }
 }
 
-export default Login;
+export default Login
